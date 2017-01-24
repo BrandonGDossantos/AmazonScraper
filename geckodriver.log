@@ -1,0 +1,63 @@
+1485300939716	geckodriver	INFO	Listening on 127.0.0.1:53529
+1485300940715	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.o6FBaos7fkCo
+1485300940715	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1485300940722	geckodriver::marionette	INFO	Connecting to Marionette on localhost:32950
+
+(firefox:14346): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:14346): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:14346): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:14346): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+1485300941545	Marionette	INFO	Listening on port 32950
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+1485301560059	geckodriver	INFO	Listening on 127.0.0.1:36880
+1485301561057	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.KUKw4UpeD4Hd
+1485301561058	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1485301561059	geckodriver::marionette	INFO	Connecting to Marionette on localhost:37439
+
+(firefox:14429): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:14429): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:14429): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:14429): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+1485301561800	Marionette	INFO	Listening on port 37439
+1485301590606	geckodriver	INFO	Listening on 127.0.0.1:39703
+1485301591606	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.LUnPaGQXdBtS
+1485301591607	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1485301591610	geckodriver::marionette	INFO	Connecting to Marionette on localhost:35545
+
+(firefox:14497): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:14497): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:14497): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:14497): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+1485301594148	Marionette	INFO	Listening on port 35545
+[Parent 14497] WARNING: Failed to launch tab subprocess: file /build/firefox-DPPX3E/firefox-51.0~b14+build1/ipc/glue/GeckoChildProcessHost.cpp, line 574
+[Parent 14497] WARNING: pipe error (43): Connection reset by peer: file /build/firefox-DPPX3E/firefox-51.0~b14+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 323
+[Parent 14497] WARNING: Failed to launch tab subprocess: file /build/firefox-DPPX3E/firefox-51.0~b14+build1/ipc/glue/GeckoChildProcessHost.cpp, line 574
+[Parent 14497] WARNING: pipe error (43): Connection reset by peer: file /build/firefox-DPPX3E/firefox-51.0~b14+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 323
+JavaScript error: chrome://global/content/bindings/remote-browser.xml, line 256: TypeError: frameLoader.tabParent is null
+1485301810264	geckodriver	INFO	Listening on 127.0.0.1:45920
+1485301811237	mozprofile::profile	INFO	Using profile path /tmp/rust_mozprofile.Zz4dUo9D7FdX
+1485301811238	geckodriver::marionette	INFO	Starting browser /usr/bin/firefox
+1485301811242	geckodriver::marionette	INFO	Connecting to Marionette on localhost:57140
+
+(firefox:14580): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:14580): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:14580): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:14580): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+1485301831575	Marionette	INFO	Listening on port 57140
