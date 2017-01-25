@@ -7,7 +7,10 @@ driver = webdriver.Firefox(executable_path='/home/ubuntu/AmazonScraper/geckodriv
 driver.get('http://www.amazon.com/gp/goldbox/ref=nav_cs_gb')
 html = driver.page_source
 soup = BeautifulSoup(html)
-spans = soup.find_all('span', attrs={'id': 'dealTitle'})
-for span in spans:
-	print span.string
-	
+#data = []
+clean_soup = [span.get_text(strip=True) for span in soup.find_all('span', attrs={'id': 'dealTitle'})]
+#for span in spans:
+#	data.append(span.text)
+#result = ''.join([	
+#print(span.get_text())
+print(clean_soup)
