@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import sys
 import os
+import re
 #import urllib2
 #import socket
 from bs4 import BeautifulSoup
@@ -29,7 +30,22 @@ try:
 		divs = soup.find_all('div', attrs={'class': 'a-row dealContainer dealTile'})
 		for div in divs:
 			tmp = div.find('span', attrs={'id': 'dealTitle'})
-			print(tmp.get_text(strip=True).encode('utf-8'))
+			
+			links = div.find('a', attrs={'class': 'a-link-normal'})
+			cash = div.find('span', attrs={'class': 'a-size-medium a-color-base inlineBlock unitLineHeight'})
+			reviews = div.find('span', attrs={'id': 'totalReviews'})
+			print(tmp.get_text(strip=True).encode('utf-8'))	
+			
+			print(links['href'])
+			if cash == None:
+				print('\t' + "None")
+				continue
+			else:
+				print('\t' + cash.text)
+			if reviews == None:
+				print('\t' + "None")
+			else:
+				print('\t' + reviews.text)
 			#print(tmp)
 		url = list(url)
 		url[68] = str(i + 2)
