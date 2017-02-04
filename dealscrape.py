@@ -20,12 +20,9 @@ driver.get(url)
 
 db = sqlite3.connect('amazon.db')
 c = db.cursor()
+c.execute("DROP TABLE IF EXISTS products")
 c.execute("CREATE TABLE IF NOT EXISTS products (title TEXT, price INT, review INT, link TEXT)")
 db.commit()
-
-
-
-
 #print('\t' + "Page: 1")
 try:
 	for i in range(10):
@@ -34,27 +31,32 @@ try:
 		soup = BeautifulSoup(html, "lxml")
 		divs = soup.find_all('div', attrs={'class': 'a-row dealContainer dealTile'})
 		for div in divs:
-			tmp = div.find('span', attrs={'id': 'dealTitle'})
-			
-			links = div.find('a', attrs={'class': 'a-link-normal'})
-			prices = div.find('span', attrs={'class': 'a-size-medium a-color-base inlineBlock unitLineHeight'})
-			reviews = div.find('span', attrs={'id': 'totalReviews'})
-			title = tmp.get_text(strip=True).encode('utf-8')	
-			link = links['href']
-			#print(links['href'])
-			if prices == None:
-				price = ""	
-				#print('\t' + "None")
-				continue
+			if div.find_all('span', attrs={'data-action' : 'gbdeal-addtocart'}):
+				tmp = div.find('span', attrs={'id': 'dealTitle'})			
+				links = div.find('a', attrs={'class': 'a-link-normal'})
+				prices = div.find('span', attrs={'class': 'a-size-medium a-color-base inlineBlock unitLineHeight'})
+				reviews = div.find('span', attrs={'id': 'totalReviews'})
+				#title = tmp.get_text(strip=True).encode('utf-8')		
+				title = tmp.get_text(strip=True)	
+				link = links['href']
+				#print(links['href'])
+				link = re.sub('/ref.*', '', link)
+				print(link)
+				if prices == None:
+					price = ""	
+					#print('\t' + "None")
+					continue
+				else:
+					price = prices.text
+					#print('\t' + prices.text)
+				if reviews == None:
+					#print('\t' + "None")
+					continue
+				else:
+					review = reviews.text
+					#print('\t' + reviews.text)
 			else:
-				price = prices.text
-				#print('\t' + prices.text)
-			if reviews == None:
-				#print('\t' + "None")
 				continue
-			else:
-				review = reviews.text
-				#print('\t' + reviews.text)
 			c.execute("INSERT INTO products VALUES (?, ?, ?, ?)", (title, price, review, link))
 			db.commit()
 		url = list(url)
