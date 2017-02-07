@@ -21,7 +21,7 @@ driver.get(url)
 db = sqlite3.connect('amazon.db')
 c = db.cursor()
 c.execute("DROP TABLE IF EXISTS products")
-c.execute("CREATE TABLE IF NOT EXISTS products (title TEXT, price INT, review INT, link TEXT)")
+c.execute("CREATE TABLE IF NOT EXISTS products (title TEXT, price INT, review INT, link TEXT, ladder INT)")
 db.commit()
 #print('\t' + "Page: 1")
 try:
@@ -57,7 +57,7 @@ try:
 					#print('\t' + reviews.text)
 			else:
 				continue
-			c.execute("INSERT INTO products VALUES (?, ?, ?, ?)", (title, price, review, link))
+			c.execute("INSERT INTO products (title, price, review, link) VALUES(?, ?, ?, ?)", (title, price, review, link))
 			db.commit()
 		url = list(url)
 		url[68] = str(i + 2)
@@ -72,4 +72,3 @@ except KeyboardInterrupt:
 finally:
 	driver.close()
 	display.stop()
-	f.close()
