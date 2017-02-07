@@ -21,7 +21,7 @@ driver.get(url)
 db = sqlite3.connect('amazon.db')
 c = db.cursor()
 c.execute("DROP TABLE IF EXISTS products")
-c.execute("CREATE TABLE IF NOT EXISTS products (title TEXT, price INT, review INT, link TEXT, ladder INT)")
+c.execute("CREATE TABLE IF NOT EXISTS products (title TEXT, price INT, review INT, link TEXT, pid INTEGER PRIMARY KEY AUTOINCREMENT)")
 db.commit()
 #print('\t' + "Page: 1")
 try:
